@@ -51,8 +51,9 @@ class MyApp extends StatelessWidget {
                 return const ReviewScreens();
 
               default:
-                return const ServicesScreen();
-              // HomeScreen();
+                return const
+                    // ServicesScreen();
+                    HomeScreen();
             }
           },
         );

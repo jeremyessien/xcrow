@@ -8,7 +8,7 @@ class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
   TextStyle homeScreenTextStyle() {
     return const TextStyle(
-        color: BrandColors.whiteColor,
+        color: BrandColors.colorBackground,
         fontSize: 20,
         fontWeight: FontWeight.w500);
   }
@@ -20,9 +20,9 @@ class ServicesScreen extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          backgroundColor: BrandColors.whiteColor,
+          backgroundColor: BrandColors.colorBackground,
           bottomNavigationBar: BottomAppBar(
-            color: BrandColors.whiteColor,
+            color: BrandColors.colorBackground,
             child: TabBar(
               indicatorSize: TabBarIndicatorSize.label,
               indicator: const UnderlineTabIndicator(
@@ -91,7 +91,7 @@ class ServicesScreen extends StatelessWidget {
                 Container(
                   height: size.height,
                   width: size.width,
-                  color: BrandColors.whiteColor,
+                  color: BrandColors.colorBackground,
                   child: ListView(
                     children: [
                       SellerCardHorizontal(

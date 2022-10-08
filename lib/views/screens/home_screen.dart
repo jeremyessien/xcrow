@@ -19,29 +19,10 @@ class HomeScreen extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  tileMode: TileMode.mirror,
-                  colors: [
-                    BrandColors.colorPrimary,
-                    Color.fromARGB(255, 26, 95, 173),
-
-                    BrandColors.whiteColor,
-                    Color.fromARGB(255, 172, 167, 167),
-                    Color.fromARGB(255, 76, 70, 70),
-                    // Colors.black,
-                  ],
-                  // stops: [
-                  //   0.3,
-                  //   0.6,
-                  //   0.9,
-                  // ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
+            Image.asset(
+              xcrowOnBoard,
             ),
+           
             Positioned(
               right: 10,
               top: 8,
