@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:xcrow/views/screens/splash_screen.dart';
 
 import 'main_view.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const SplashScreen(),
+      // home: const HomeScreen(),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
           settings: routeSettings,
