@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xcrow/Screens/home_screen.dart';
 
 void main() {
-  runApp( HomePage());
+  runApp(HomePage());
 }
 
 class HomePage extends StatelessWidget {
@@ -17,9 +17,7 @@ class HomePage extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
-
-
