@@ -22,12 +22,12 @@ class ServicesScreen extends StatelessWidget {
         child: Scaffold(
           backgroundColor: BrandColors.whiteColor,
           bottomNavigationBar: BottomAppBar(
-            color: BrandColors.colorOrange,
+            color: BrandColors.whiteColor,
             child: TabBar(
               indicatorSize: TabBarIndicatorSize.label,
               indicator: const UnderlineTabIndicator(
                 borderSide: BorderSide(
-                  color: BrandColors.colorLightGray,
+                  color: BrandColors.colorTextDark,
                   width: 3,
                   style: BorderStyle.solid,
                 ),
@@ -40,10 +40,17 @@ class ServicesScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: const [
-                      Icon(Icons.home),
+                      Icon(
+                        Icons.home,
+                        color: BrandColors.colorTextDark,
+                      ),
                       SizedBox(width: 10),
                       Text(
                         'Dashboard',
+                        style: TextStyle(
+                            color: BrandColors.colorTextDark,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -54,11 +61,19 @@ class ServicesScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: const [
-                      Icon(Icons.history),
+                      Icon(
+                        Icons.history,
+                        color: BrandColors.colorTextDark,
+                      ),
                       SizedBox(width: 10),
                       Text(
                         'Task History',
-                      )
+                        style: TextStyle(
+                          color: BrandColors.colorTextDark,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                 ),
