@@ -1,6 +1,6 @@
 # xcrow
 
-Xcrow app for hacktoberfest 2022
+Escrow app for hacktoberfest 2022
 
 ## Getting Started
 
