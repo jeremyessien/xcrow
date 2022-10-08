@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               right: 10,
               top: 8,
               child: Image.asset(
-                xcrowLogoDark,
+                xcrowLogoLight,
                 width: size.width * 0.4,
                 height: 100,
                 fit: BoxFit.cover,
