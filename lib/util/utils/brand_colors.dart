@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BrandColors {
-  static const Color colorPrimary = Color(0xff456268);
+  static const Color colorPrimary = Color(0xFF3858FF);
   static const Color colorPrimaryDark = Color(0xFF3858FF);
   static const Color colorAccent = Color(0xFF7387F4);
   static const Color colorAccent1 = Color(0xFF7AB432);

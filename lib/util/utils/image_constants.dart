@@ -1,7 +1,12 @@
- const String hometownLogo = 'assets/images/hometown_logo.png';
- const String hometownBg = 'assets/images/hometown_bg.jpg';
- const String kochureBg = 'assets/images/kochure_bg.jpg';
- const String kochureBg2 = 'assets/images/kochure_bg2.jpg';
- const String kochureAd1 = 'assets/images/kochure_ad1.jpg';
- const String kochureLogo = 'assets/images/kochure_logo.png';
- const String lottieBump = 'assets/images/lottie-comment-bump3.json';
+const String xcrowLogoDark = 'images/xcrowLogo-darkBg.png';
+const String xcrowLogoLight = 'images/xcrowLogo-lightBg.png';
+const String clothVendor = 'images/seller_cloth_vendor.png';
+const String cryptoMerchant = 'images/seller_crypto_merchant.png';
+const String fashiondesigner = 'images/seller_fashion_designer.png';
+const String hairVendor = 'images/seller_hair_vendor.png';
+const String logoDesigner = 'images/seller_log_design.png';
+const String productdesigner = 'images/seller_product_design.png';
+const String socialMedia = 'images/seller_social_media.png';
+const String webDesigner = 'images/seller_web_design.png';
+
+const String xcrowOnBoard = 'images/xcrowOnBoard.jpeg';
