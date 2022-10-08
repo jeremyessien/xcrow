@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xcrow/src/views/screens/transaction_info_screen.dart';
-import 'package:xcrow/views/screens/chat_screen.dart';
-import 'package:xcrow/views/screens/confirmation_screen.dart';
-import 'package:xcrow/views/screens/reviews_screen.dart';
-import 'package:xcrow/views/screens/services_screen.dart';
+
 import 'main_view.dart';
 
 void main() {
