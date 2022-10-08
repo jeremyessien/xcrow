@@ -4,7 +4,7 @@ import 'package:xcrow/util/utils/brand_colors.dart';
 class DefaultTxtField extends StatelessWidget {
   String hint;
   bool obstxt;
- DefaultTxtField({Key? key, required this.hint, this.obstxt = false}) : super(key: key);
+ DefaultTxtField({Key? key, required this.hint, this.obstxt = false, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

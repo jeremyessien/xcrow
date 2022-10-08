@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:xcrow/views/screens/auth/login%20screen.dart';
 import 'package:xcrow/views/screens/auth/signup%20screen.dart';
+import 'package:xcrow/views/screens/search%20vendors.dart';
 
 import 'main_view.dart';
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  SignupScreen(),
+      home:  const SignupScreen(),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
           settings: routeSettings,
