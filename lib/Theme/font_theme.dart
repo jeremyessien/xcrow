@@ -105,7 +105,7 @@ class MyTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: BrandColors.colorPrimaryDark,
+        primary: BrandColors.colorPrimaryDark,
         padding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -158,7 +158,7 @@ class MyTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: BrandColors.colorBrown,
+        primary: BrandColors.colorBrown,
         padding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
