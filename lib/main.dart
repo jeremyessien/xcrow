@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xcrow/views/screens/auth/signup%20screen.dart';
 
 import 'main_view.dart';
 
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home:  SignupScreen(),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
           settings: routeSettings,
