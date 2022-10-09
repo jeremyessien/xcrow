@@ -1,6 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:xcrow/views/screens/auth/login_screen.dart';
+import 'package:xcrow/views/screens/auth/signup_screen.dart';
 import 'package:xcrow/views/screens/splash_screen.dart';
 
 import 'main_view.dart';
@@ -8,10 +10,7 @@ import 'main_view.dart';
 void main() {
   Paint.enableDithering = true;
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => const MyApp(), //
-    ),
+    const MyApp()
   );
 }
 
@@ -24,8 +23,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
       onGenerateTitle: (context) {
         return 'Xcrow';
       },
@@ -49,7 +48,10 @@ class MyApp extends StatelessWidget {
                 return const ConfirmationScreen();
               case ReviewScreens.routeName:
                 return const ReviewScreens();
-
+              case SignupScreen.routeName:
+                return const SignupScreen();
+                 case LoginScreen.routeName:
+                return const LoginScreen();
               default:
                 return const
                     // ServicesScreen();

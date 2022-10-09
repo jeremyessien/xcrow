@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:xcrow/main_view.dart';
 import 'package:xcrow/util/utils/brand_colors.dart';
+import 'package:xcrow/util/utils/image_constants.dart';
 import 'package:xcrow/util/utils/navigation.dart';
-import 'package:xcrow/views/screens/auth/login%20screen.dart';
+import 'package:xcrow/views/screens/auth/login_screen.dart';
 
 import '../../../util/widgets.dart';
 
 class SignupScreen extends StatefulWidget {
+  static const routeName = 'signup_screen';
   const SignupScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,6 +20,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -27,12 +30,13 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Column(
             children: [
               Image.asset(
-                'images/Xcrow Logo.png',
-                height: 120,
-                width: 120,
+                xcrowLogoDark,
+                height: 50,
+                width: size.width * 0.5,
+                fit: BoxFit.cover,
               ),
               const SizedBox(
-                height: 10,
+                height: 35,
               ),
               const Text(
                 'Welcome to X-crow',
@@ -84,27 +88,34 @@ class _SignupScreenState extends State<SignupScreen> {
                 ],
               ),
               GestureDetector(
-                  onTap: () {
-                    push(context, HomeScreen());
-                  },
-                  child: Container(
-                      alignment: Alignment.center,
-                      width: double.maxFinite,
-                      height: 45,
-                      decoration: const BoxDecoration(
-                          color: BrandColors.colorPrimaryDark,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(color: BrandColors.colorBackground),
-                      ))),
+                onTap: () {
+                  push(context, const LoginScreen());
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.maxFinite,
+                  height: 45,
+                  decoration: const BoxDecoration(
+                      color: BrandColors.colorPrimaryDark,
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: const Text(
+                    'Sign up',
+                    style: TextStyle(color: BrandColors.colorBackground),
+                  ),
+                ),
+              ),
+
+
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                     onPressed: () {
-                      push(context, LoginScreen());
+                      push(
+                        context,
+                        const LoginScreen(),
+                      );
                     },
-                    child: Text(
+                    child: const Text(
                       'Already have an account?',
                       style: TextStyle(color: BrandColors.colorPrimaryDark),
                     )),
