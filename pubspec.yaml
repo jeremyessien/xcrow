@@ -1,9 +1,7 @@
 name: xcrow
 description: Xcrow app for hacktoberfest 2022
 
-
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
 
 version: 1.0.0+1
 
@@ -13,28 +11,22 @@ environment:
 dependencies:
   auto_size_text: ^3.0.0
   cupertino_icons: ^1.0.2
+  device_preview: ^1.1.0
+  faker: ^2.0.0
   flutter:
     sdk: flutter
-
-
-
-  lottie: ^1.4.2
   flutter_animated_dialog: ^2.0.1
+  lottie: ^1.4.2
   shared_preferences: ^2.0.15
-  device_preview: ^1.1.0
-
-
 
 dev_dependencies:
+
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
-
-  flutter_lints: ^2.0.0
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -45,15 +37,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - images/
+    - images/
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

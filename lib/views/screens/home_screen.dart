@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xcrow/util/utils/brand_colors.dart';
 import 'package:xcrow/util/utils/image_constants.dart';
+import 'package:xcrow/util/utils/navigation.dart';
+import 'package:xcrow/views/screens/auth/signup_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = 'home_screen';
@@ -10,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: BrandColors.colorPrimary,
       // appBar: AppBar(
       //   title: const Text('Home screen'),
       // ),
@@ -21,8 +24,11 @@ class HomeScreen extends StatelessWidget {
           children: [
             Image.asset(
               xcrowOnBoard,
+              width: size.width,
+              height: size.height,
+              fit: BoxFit.fill,
             ),
-           
+
             Positioned(
               right: 10,
               top: 8,
@@ -40,7 +46,10 @@ class HomeScreen extends StatelessWidget {
                 child: XcrowLoginButton(
                   title: 'Get Started',
                   onTap: () {
-                    // pushNamed
+                    push(
+                      context,
+                    const  SignupScreen(),
+                    );
                   },
                 ),
               ),

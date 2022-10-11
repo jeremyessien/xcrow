@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:xcrow/util/utils/brand_colors.dart';
 import 'package:xcrow/util/utils/image_constants.dart';
+import 'package:xcrow/util/utils/navigation.dart';
+import 'package:xcrow/views/screens/search%20vendors.dart';
+import 'package:xcrow/views/screens/sellers_page.dart';
 
 class ServicesScreen extends StatelessWidget {
   static const routeName = 'services_screen';
@@ -94,12 +97,48 @@ class ServicesScreen extends StatelessWidget {
                   color: BrandColors.colorBackground,
                   child: ListView(
                     children: [
+                      TextField(
+                        onTap: () {
+                          push(
+                            context,
+                            const SellersScreen(),
+                          );
+                        },
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            icon: const Icon(
+                              Icons.search,
+                              color: Colors.black,
+                              size: 30,
+                            ),
+                            onPressed: () {},
+                          ),
+                          filled: true,
+                          fillColor: BrandColors.colorBackground,
+                          hintText: 'Search sellers...',
+                          hintStyle:
+                              const TextStyle(fontWeight: FontWeight.w600),
+                          border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(
+                              color: BrandColors.colorGreen,
+                              width: 3,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       SellerCardHorizontal(
                         size: size,
                         height: 0.12,
                         text: 'Fashion Designers',
                         imgUrl: fashiondesigner,
                         textStyle: homeScreenTextStyle(),
+                        onTap: () {
+                          push(context, const SearchVendors());
+                        },
                       ),
                       const SizedBox(
                         height: 10,
@@ -115,6 +154,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: logoDesigner,
                               text: 'logo design',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                           Expanded(
@@ -125,6 +167,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: logoDesigner,
                               text: 'Social Media Influencer',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                         ],
@@ -138,6 +183,9 @@ class ServicesScreen extends StatelessWidget {
                         text: 'Crypto Merchant',
                         imgUrl: cryptoMerchant,
                         textStyle: homeScreenTextStyle(),
+                        onTap: () {
+                          push(context, const SearchVendors());
+                        },
                       ),
                       const SizedBox(
                         height: 10,
@@ -153,6 +201,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: productdesigner,
                               text: 'Product designer',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                           Expanded(
@@ -163,6 +214,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: hairVendor,
                               text: 'hair vendors',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                         ],
@@ -181,6 +235,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: webDesigner,
                               text: 'Web Developers',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                           Expanded(
@@ -191,6 +248,9 @@ class ServicesScreen extends StatelessWidget {
                               imgUrl: clothVendor,
                               text: 'Cloth vendors',
                               textStyle: homeScreenTextStyle(),
+                              onTap: () {
+                                push(context, const SearchVendors());
+                              },
                             ),
                           ),
                         ],
@@ -198,11 +258,7 @@ class ServicesScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  height: size.height,
-                  width: size.width,
-                  color: BrandColors.colorGreen,
-                ),
+                const SellersScreen()
               ],
             ),
           ),
@@ -221,46 +277,51 @@ class SellerCardVert extends StatelessWidget {
     required this.imgUrl,
     required this.text,
     this.textStyle,
+    required this.onTap,
   }) : super(key: key);
 
   final Size size;
   final double height, width;
   final String imgUrl, text;
   final TextStyle? textStyle;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size.width * width,
-      height: size.height * height,
-      child: Card(
-          clipBehavior: Clip.hardEdge,
-          color: BrandColors.colorPrimary,
-          elevation: 10,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  text,
-                  style: textStyle,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Image.asset(
-                  imgUrl,
-                  width: size.width * 0.35,
-                  height: 100,
-                  fit: BoxFit.cover,
-                ),
-              ],
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: size.width * width,
+        height: size.height * height,
+        child: Card(
+            clipBehavior: Clip.hardEdge,
+            color: BrandColors.colorPrimary,
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
-          )),
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    text,
+                    style: textStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Image.asset(
+                    imgUrl,
+                    width: size.width * 0.35,
+                    height: 90,
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
+            )),
+      ),
     );
   }
 }
@@ -273,55 +334,41 @@ class SellerCardHorizontal extends StatelessWidget {
     required this.text,
     required this.imgUrl,
     this.textStyle,
+    required this.onTap,
   }) : super(key: key);
 
   final Size size;
   final double height;
   final String text, imgUrl;
   final TextStyle? textStyle;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size.width,
-      height: size.height * height,
-      child: Card(
-          clipBehavior: Clip.hardEdge,
-          color: BrandColors.colorPrimary,
-          elevation: 10,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Center(
-            child: ListTile(
-              title: Text(text, style: textStyle),
-              trailing: Image.asset(
-                imgUrl,
-                width: 100,
-                height: 190,
-                fit: BoxFit.cover,
-              ),
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: size.width,
+        height: size.height * height,
+        child: Card(
+            clipBehavior: Clip.hardEdge,
+            color: BrandColors.colorPrimary,
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
-          )
-
-          // Row(
-          //   mainAxisSize: MainAxisSize.min,
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     const Text('Fashion designers'),
-          //     // const SizedBox(
-          //     //   height: 2,
-          //     // ),
-          //     Image.asset(
-          //       xcrowLogoDark,
-          //       width: 100,
-          //       height: 20,
-          //       fit: BoxFit.cover,
-          //     ),
-          //   ],
-          // ),
-          ),
+            child: Center(
+              child: ListTile(
+                title: Text(text, style: textStyle),
+                trailing: Image.asset(
+                  imgUrl,
+                  width: 100,
+                  height: 190,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )),
+      ),
     );
   }
 }
